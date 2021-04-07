@@ -5,16 +5,20 @@ create project folder NightTimeTemperature
 checkout source code from my repository https://github.com/y23chen/test.git
 
 
-step 1:  run command under project root -- build dev gradle profile with excluding all the tests
+step 1:  run command under project root -- 
+build dev gradle profile with excluding all the tests
 gradle -PbuildProfile=dev build -x test -x integrationTest
+
 check if the dev jar file exists under NightTimeTemperature\build\libs and NightTimeTemperature\docker-compose\dev
 
 step 2: build qa gradle profile with excluding all the tests
+
 gradle -PbuildProfile=qa build -x test  -x integrationTest
 check if the  qa file exists under NightTimeTemperature\build\libs and NightTimeTemperature\docker-compose\qa
 
 
 Step 3: run below command to start container and image for both dev and qa
+
 docker-compose  -f docker-compose-dev.yml -f docker-compose-qa.yml up
 
 
